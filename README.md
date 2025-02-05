@@ -61,7 +61,6 @@ rendus
 ├── test
 │   └── nonUnit
 └── view
-    ├── back-up
     └── script
 ```
 ⚠️ Disclaimer: This project is educational and was developed as part of our academic coursework
