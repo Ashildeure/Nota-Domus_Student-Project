@@ -1,0 +1,167 @@
+body {
+  font-family: 'Jost', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #aa9885;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #484139;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 31.25%;
+  height: 85%;
+  gap: 15px;
+  background: #F4DFCA;
+}
+.profile-picture {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  height: 25%;
+}
+
+.profile-picture svg {
+
+  width: 100%;
+  height: 100%;
+}
+
+.password-change-form {
+  width: 60%;
+}
+
+.mail, .pass, .password-change-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+}
+
+.mail input, .pwd-input input {
+  width: inherit;
+  padding: 10px 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+  outline:none;
+}
+
+*:disabled {
+  background-color: white;
+}
+
+
+.pwd-input {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  width: inherit;
+}
+
+.pwd-input input {
+  flex-grow: 1;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.password-tips, .password-tips ul, .guide, #notSamePass, .setCurrentPass {
+  font-size: 12px;
+  color: #555;
+}
+
+.password-tips + ul{
+  padding-left: 12px;
+}
+
+.password-tips ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.password-tips ul .valid {
+  color: green;
+}
+
+ .btnAccount {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px ;
+}
+
+.btnAccount * {
+  width: 30%;
+  display: flex;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+
+.password-change-form button, #cancel {
+  border-radius: 7px;
+  padding: 10px 0;
+  border: 1px solid;
+  color: #F4DFCA;
+  box-shadow: 2px 2px #c5b09b;
+  cursor: pointer;
+  text-align: center;
+}
+
+.password-change-form button {
+  background-color: #095228;
+  border-color: #095228;
+}
+
+.password-change-form button:hover {
+  color: #095228;
+  background-color: #F4DFCA;
+}
+
+#cancel {
+  border-color: #731702;
+  background-color: #731702;
+  text-decoration: none;
+  
+}
+
+#cancel:hover {
+  color: #731702;
+  background-color: #F4DFCA;
+}
+
+ul.password-tips .valid {
+  color: green;
+}
+
+
+#notSamePass, .setCurrentPass {
+  display: none;
+  color: #731702;
+  text-align: center;
+}
+
+
+
+#old-password:focus #setCurrentPass{
+  display: inherit;
+}
+
+

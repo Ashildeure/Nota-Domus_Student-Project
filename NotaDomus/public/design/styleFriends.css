@@ -1,0 +1,624 @@
+/* ---------- Feuille de style des amis ----------- */
+
+/* ----- Style général ----- */
+body {
+    margin: 0%;
+    font-family: 'Jost', sans-serif;
+    position: relative;
+}
+
+/* ----- Conteneur fenêtre -----  */
+.main {
+    z-index: 1;
+    width: 25%;
+    height: 100vh;
+    position: absolute;
+    transition: .5s ease-in-out;
+    left: 95%;
+    border-left: 1px solid black;
+}
+
+/* ----- Mise en forme globale ----- */
+legend {
+    font-weight: bold;
+    padding: 0%;
+    font-size: 20px;
+}
+
+.modif, .addFriend {
+    padding: 5px 7px;
+    border-radius: 5px;
+    background-color: #731702;
+    border: 1px solid #731702;
+    cursor: pointer;
+    color: #F4DFCA;
+}
+.modif{
+    font-size: 13px;
+    text-decoration: none;
+    text-align: center;
+}
+.modif:hover, .addFriend:hover {
+    background-color: #F4DFCA;
+    color: #731702;
+}
+
+/* ----- Conteneur amis ----- */
+.frame-friends {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+    background-color: #F4DFCA;
+}
+
+/*  Bouton ouverture amis  */
+.friends-label {
+    background-color: #731702;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 40px 10px 40px 10px;
+    border-radius: 50px;
+    box-shadow: 10px 2px 20px #521e13;
+    position: absolute;
+    top: 40%;
+    left: -6%;
+    transition: .5s ease-in-out;
+    z-index: 2;
+}
+
+.friends-label svg {
+    width: 40px;
+    height: auto;
+}
+.bi-chevron-right{
+    display: none;
+}
+
+/* Ruban rouge arriere-plan */
+.rectangle {
+    background-color: #731702;
+    position: absolute;
+    width: 220%;
+    height: 12.5%;
+    bottom: 47.5%;
+    right: -50%;
+}
+
+/* ------ Fonctions déroulantes ----- */
+
+#toggle-friends:checked ~ .main .frame-friends {
+    left: 0;
+}
+
+#toggle-friends:checked ~ .main {
+    left: 75%;
+}
+
+#toggle-friends:checked ~ .main .friends-label {
+    left: -8%;
+}
+
+#toggle-friends:checked ~ .main .friends-label .bi-person-fill {
+    display: none;
+}
+
+#toggle-friends:checked ~ .main .friends-label .bi-chevron-right {
+    display: flex;
+}
+
+#toggle-friends:checked ~ .main .frame-friends .friends-form {
+    margin-left: 10%;
+}
+
+/* ----- Contenu amis ----- */
+.friends-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    margin-left: 20%;
+    transition: .5s ease-in-out;
+    width: 90%;
+}
+
+/* Profil */
+.profil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.profil div {
+    display: flex;
+    gap: 5%;
+}
+
+.myProfil {
+    width: 120%;
+    display: flex;
+    align-items: center;
+}
+
+.myProfil svg {
+    height: 5vh;
+    width: 20%;
+}
+
+.myProfil button {
+    margin: 16px 0px 16px 0px;
+}
+
+.logOut {
+    height: 6vh;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logOut div {
+    height: 100%;
+    width: 100%;
+}
+
+.logOut button {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+}
+
+.logOut a svg {
+    width: 100%;
+    height: 100%;
+    fill: black;
+}
+
+.logOut a:hover svg {
+    fill: #731702;
+}
+
+
+.btnlogout {
+    color: #731702;
+    width: 60%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----- Amis ----- */
+.friend {
+    display: flex;
+    flex-direction: column;
+}
+
+.friend-title {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.friend-list {
+    display: flex;
+    flex-direction: column;
+    height: 160px;
+    overflow-y: scroll;
+    padding-right: 5%;
+    margin-top: 5%;
+    border-left: #731702 solid 3px;
+    box-shadow: rgba(108, 28, 28, 0.35) 0px -50px 36px -28px inset;
+    margin-right: 2.5%;
+
+}
+
+.div-aFriend {
+    display: flex;
+    align-items: center;
+}
+
+.aFriend {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.div-aFriend button:first-of-type svg {
+    width: 13%;
+    height: auto;
+
+}
+
+.div-aFriend button:first-of-type p {
+    color: black;
+    font-size: 125%;
+    white-space: nowrap;
+    margin-left: 5%;
+}
+
+.removeFriend {
+    display: none;
+    padding: 5px 7px;
+    border-radius: 5px;
+    background-color: #731702;
+    border: 1px solid #731702;
+    cursor: pointer;
+    color: #F4DFCA;
+}
+
+.removeFriend:hover {
+    background-color: #F4DFCA;
+    color: #731702;
+}
+
+/* ----- Conteneur de commentaires ------ */
+.noComment{
+    color: #F4DFCA;
+}
+.frame-coms {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+}
+
+.coms {
+    height: 640px;
+    overflow-y: auto;
+    scrollbar-color: #ffffff;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+}
+.btn-newComs{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn-newComs button{
+    padding: 5px 7px ;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #731702;
+    border: 1px solid #731702;
+    cursor: pointer;
+    color: #F4DFCA;
+    width: 50%;
+    margin-right: 2%;
+    font-weight: bold;
+}
+
+.btn-newComs button:hover{
+    background-color: #F4DFCA;
+    color: #731702;
+}
+.btn-newComs button:hover svg{
+    fill: #731702;
+}
+.friend-button{
+    opacity: 0.5;
+}
+.coms-list{
+    height: 462px;
+    overflow-y: auto;
+    scrollbar-color: #ffffff;
+    background-color: #731702;
+    padding: 5%;
+    margin-right: 2%;
+
+}
+.myComs-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.friendsComs-list{
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+.myComs-list p:nth-of-type(2){
+    font-weight: normal;
+
+}
+
+/* Commentaire */
+h2 {
+    margin-left: 2%;
+}
+
+.comments {
+    display: flex;
+    gap: 1%;
+    padding: 1%;
+}
+
+.comment {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px grey;
+    padding: 2%;
+
+}
+
+.comment span:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.comment label {
+    cursor: pointer;
+}
+
+.comment span .btnUp:checked ~ .labelUp svg, .comment span .labelUp:hover svg {
+    fill: lightskyblue;
+}
+
+.comment span .btnDown:checked ~ .labelDown svg, .comment span .labelDown:hover svg {
+    fill: lightcoral;
+}
+
+.comment form {
+    display: flex;
+    gap: 5%;
+}
+
+.comment p {
+    display: inline;
+    font-size: 85%;
+    margin: 0px 0px 5% 0px;
+    text-align: justify;
+}
+
+.comment span:first-of-type p{
+    font-weight: bold;
+}
+
+.com-part1 {
+    display: flex;
+    align-items: end;
+}
+
+.com-part1 p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 110%;
+    color: #731702;
+}
+
+
+/* Etoiles */
+
+.tiny_com_rating label {
+    color: #F4DFCA;
+    transition: color .4s;
+    background-color: transparent;
+    border: transparent;
+    cursor: default
+}
+
+.tiny_com_rating input:checked ~ label {
+    color: #F4DFCA; /* Réinitialiser la couleur des étoiles après */
+}
+
+.tiny_com_rating input:checked + label, .tiny_com_rating input:checked + label ~ label {
+    color: #731702;
+
+}
+
+/* ----- Popups ------ */
+
+/* ----- Ajout ami ------  */
+.popup-addFriend {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+.popup-content-addFriend {
+    width: 20%;
+    height: 32%;
+    padding: 1%;
+    background-color: #F4DFCA;
+    border: 1px solid #b8a797;
+    border-radius: 5px;
+}
+
+.form-friend {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+/* ----- Recherche d'amis ----- */
+#friend-Suggestion{
+    background-color: white;
+    border: 1px solid #7a7878;
+    border-radius: 3px;
+    height: 170px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
+}
+#friend-Suggestion button {
+    font-size: 90%;
+    font-weight: normal;
+    width: 100%;
+    display: inline;
+    flex-grow: 1;
+    cursor: pointer;
+    text-align: inherit;
+    background: transparent;
+    border: transparent;
+}
+#friend-Suggestion button:hover {
+    color: #731702;
+}
+.form-friend span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.changeContent-addFriend, .changeContent-sureRemove{
+    background-color: #095228;
+    border: 1px solid #095228;
+    border-radius: 5px;
+    color: #F4DFCA;
+    padding: 5px 7px;
+    font-size: 100%;
+    cursor: pointer;
+    align-self: center;
+    width: 25%;
+}
+
+.changeContent-addFriend:hover, .changeContent-sureRemove:hover {
+    color: #095228;
+    background-color: #F4DFCA;
+}
+
+.empty-name {
+    opacity: 0;
+    margin: 0px;
+    color: #731702;
+    font-size: 12px;
+    margin-bottom: 2%;
+}
+
+
+/* ----- Envoie ami ----- */
+.popup-sendFriend {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+.popup-content-sendFriend {
+    padding: 1%;
+    background-color: #F4DFCA;
+    border: 1px solid #b8a797;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    gap: 10px;
+}
+
+.popup-content-sendFriend p {
+    text-align: center;
+}
+
+.closePopup-addFriend, .closePopup-sureRemove, .closePopup-sendFriend, .closePopup-removeFriend {
+    width: 25%;
+    color: #F4DFCA;
+    background-color: #731702;
+    border: 1px solid #731702;
+    border-radius: 5px;
+    padding: 5px 7px;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+.closePopup-addFriend:hover, .closePopup-sureRemove:hover, .closePopup-sendFriend:hover, .closePopup-removeFriend:hover {
+    width: 20%;
+    color: #731702;
+    background-color: #F4DFCA;
+}
+
+/* Confirmation retirer ami */
+.popup-sureRemove {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+.popup-content-sureRemove {
+    width: 20%;
+    padding: 1%;
+    background-color: #F4DFCA;
+    border: 1px solid #b8a797;
+    border-radius: 5px;
+}
+
+
+/* ----- Retirer ami ------ */
+.popup-removeFriend {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+.popup-content-removeFriend {
+    width: 20%;
+    padding: 1%;
+    background-color: #F4DFCA;
+    border: 1px solid #b8a797;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.popup-content-removeFriend p {
+    text-align: center;
+}
+.button-sureRemove{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+

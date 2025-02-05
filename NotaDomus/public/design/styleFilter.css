@@ -1,0 +1,662 @@
+/* ---------- Feuille de style des Filtres ---------- */
+
+/* ----- Style général ----- */
+body {
+    margin: 0%;
+    font-family: 'Jost', sans-serif;
+    position: relative;
+}
+
+/* ----- Conteneur fenêtre ----- */
+.main-filter {
+    position: absolute;
+    width: 25%;
+    height: 92%;
+    right: 95%;
+    transition: .5s ease-in-out;
+    border-right: 1px solid black;
+    z-index: 1;
+}
+
+/* ----- Conteneur filtres ----- */
+.frame-filtre {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #F4DFCA;
+    transition: .5s ease-in-out;
+}
+
+/* Ruban rouge arriere-plan */
+.rectangle-filter {
+    background-color: #731702;
+    position: absolute;
+    width: 220%;
+    height: 13.5%;
+    bottom: 43%;
+    right: -50%;
+}
+
+/* Fonction déroulante */
+#toggle:checked ~ .main-filter {
+    right: 75%;
+    transition: .5s ease-in-out;
+}
+
+#toggle:checked ~ .main-filter .frame-filtre {
+    right: 0;
+    transition: .5s ease-in-out;
+}
+
+#toggle:checked ~ .main-filter .filtre-label {
+    right: -8%;
+}
+#toggle:checked ~ .main-filter .filtre-label .bi-funnel-fill {
+    display: none;
+}
+#toggle:checked ~ .main-filter .filtre-label .bi-chevron-left {
+    display: flex;
+}
+#toggleFiltre:checked ~ .frame-filtre .filtres {
+    display: flex;
+}
+
+#toggle:checked ~ .main-filter .frame-filtre .filtre-form .bouton-filtres {
+    width: 85%;
+
+}
+
+#toggle:checked ~ .main-filter .frame-filtre .filtre-form .filtres {
+    width: 85%;
+    transition: .5s ease-in-out;
+}
+
+/* ----- Bouton ouverture filtres ----- */
+.filtre-label {
+    background-color: #731702;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 40px 10px 40px 10px;
+    border-radius: 50px;
+    box-shadow: -10px 2px 20px #521e13;
+    position: absolute;
+    right: -5%;
+    top: 43.5%;
+    transition: .5s ease-in-out;
+    z-index: 2;
+}
+
+.filtre-label svg {
+    width: 40px;
+    height: auto;
+}
+.bi-chevron-left{
+    display: none;
+}
+
+/* ----- Formulaire filtres ----- */
+.filtre-form {
+    padding: 20px;
+}
+
+/* Bouton Filtrer */
+.filtre-form .bouton-filtres {
+    width: 65%;
+    padding: 10px;
+    border: 2px solid #731702;
+    border-radius: 5px;
+    background-color: #731702;
+    color: #F4DFCA;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    z-index: 3;
+    text-align: start;
+    transition: .5s ease-in-out;
+}
+
+.filtre-form .bouton-filtres:hover {
+    background-color: #F4DFCA;
+    color: #731702;
+    transition: none;
+}
+
+/* Menu déroulant des options des filtres */
+.filtre-form .filtres {
+    position: absolute;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    padding-top: 15%;
+    border: 2px solid #7a7878;
+    border-radius: 5px;
+    background-color: #f3ede2;
+    color: #000000;
+    font-weight: bold;
+    width: 65%;
+    transition: .5s ease-in-out;
+    z-index: 2;
+    display: none;
+    height: 70%;
+}
+.filtre-form .filtres .scrollZone {
+    overflow: auto;
+    padding-right: 5%;
+    padding-bottom: 2%;
+}
+.filtre-form .filtres legend {
+    margin-top: 3%;
+}
+
+/* Recommandations et favoris */
+.social {
+    padding-bottom: 15px;
+}
+
+.social input {
+    cursor: pointer;
+}
+
+.social-recom, .social-fav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.check {
+    width: 30px;
+    height: 20px;
+    margin: 0px;
+    border-radius: 20px;
+}
+
+/* Notes */
+
+.note {
+    display: flex;
+}
+
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.notes label {
+    margin-right: 8px;
+    cursor: pointer;
+    color: #731702;
+}
+
+.notes input {
+    cursor: pointer;
+}
+
+/* Epoque */
+.era {
+    height: 95px;
+    margin-bottom: 40px;
+}
+
+.range_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.sliders_control {
+    position: relative;
+    min-height: 50px;
+}
+
+.form_control {
+    position: relative;
+    top: -30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: white;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 15px;
+    height: 15px;
+    background-color: #f0ecec;
+    border: solid 1px #b1a8a8;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+    background: #f7f7f7;
+}
+
+input[type="number"] {
+    width: 40px;
+    height: 24px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background-color: #C6C6C6;
+    pointer-events: none;
+}
+
+.form_control_container__time {
+    color: #000000;
+}
+
+#fromSlider {
+    height: 0;
+    z-index: 1;
+    background: #731702;
+}
+
+
+.form_control_container__time__input{
+    color: white;
+    background: #731702;
+}
+
+/* Localisation */
+.loca span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    margin-top: 1%;
+}
+
+.loca p {
+    margin: 0;
+}
+
+.btnReset {
+    cursor: pointer;
+}
+
+#btnResetReg {
+    background-color: #731702;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+#btnResetDep {
+    background-color: #731702;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+.locaChoice {
+    background-color: white;
+    border: 1px solid #7a7878;
+    border-radius: 3px;
+    height: 90px;
+    overflow-y: scroll;
+}
+
+.locaChoice span {
+    padding: 1%;
+    cursor: pointer;
+}
+
+.locaChoice span:hover {
+    background-color: lightgray;
+}
+
+.locaChoice span label {
+    font-size: 90%;
+    font-weight: normal;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.locaChoice span input {
+    cursor: pointer;
+}
+
+/* Bouton filtrer */
+.btnFilter {
+    background-color: #731702;
+    border: 1px solid #731702;
+    color: white;
+    border-radius: 3px;
+    font-size: 100%;
+    cursor: pointer;
+    padding: 2%;
+}
+
+.btnFilter:hover {
+    background-color: white;
+    color: #731702;
+}
+
+/* ----- Maisons ----- */
+.houses {
+    height: 90%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin: 6%;
+    margin-left: 4.5%;
+    margin-top: 10%;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    position: sticky;
+    scroll-snap-type: y proximity;
+}
+
+.house {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: fit-content;
+    z-index: 1;
+    width: 98%;
+    scroll-snap-align: start;
+}
+
+.house span {
+    display: flex;
+}
+
+/* Titre maisons */
+.house span:first-of-type {
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+    padding-bottom: 0;
+}
+
+.house span:first-of-type div {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.house span .titleHouse {
+    font-size: 110%;
+    color: #521e13;
+    margin: 0;
+    align-self: center;
+    background: transparent;
+    border: transparent;
+    padding: 0;
+}
+
+.house span .titleHouse:hover {
+    text-decoration: underline;
+}
+
+.house span svg {
+    cursor: pointer;
+}
+
+/* Favoris maisons */
+.house span label:hover .heart, .house span .favorite:checked ~ label .heart {
+    fill: red;
+}
+
+.house span label {
+    height: 30px;
+}
+
+/* Etoiles maisons */
+.ratingFilter {
+    width: fit-content;
+    padding-left: 3%;
+}
+
+.ratingFilter label {
+    color: #F4DFCA;
+    font-size: 1.5em;
+    transition: color .4s;
+    float: right;
+    background-color: transparent;
+    border: transparent;
+}
+
+.ratingFilter input:checked ~ label, .ratingFilter input:checked ~ label {
+    color: #731702;
+}
+
+/* Informations maisons */
+.house span:last-of-type div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: space-between;
+}
+
+.house span p {
+    font-size: 90%;
+    margin: 0;
+}
+
+.house img {
+    margin: 3%;
+    margin-top: 1%;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.house span button {
+    font-weight: bold;
+    border: solid 2px #731702;
+    color: white;
+    background-color: #731702;
+    border-radius: 3px;
+    padding: 10px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+#toggle:checked ~ .main-filter .frame-filtre .houses {
+    opacity: 1;
+}
+
+/* ----- Pop-up commentaire ----- */
+.popupComment, .popupVisitor {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+.popupComment button, .popupVisitor button {
+    font-size: 100%;
+    padding: 2%;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 5px;
+    color: #F4DFCA;
+}
+
+.popupContentComment {
+    background-color: #F4DFCA;
+    border-radius: 5px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.popupComment h2 {
+    margin-top: 0;
+}
+
+/* Premier pop-up */
+.popupContentComment p {
+    margin-bottom: 0;
+}
+
+.popupContentComment span {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popupContentComment form > input, .popupContentComment textarea {
+    margin-bottom: 5%;
+    font-size: 100%;
+}
+
+.verifContentComment {
+    color: #731702;
+    font-size: 12px;
+    margin: 0;
+    opacity: 0;
+}
+
+#closePopupComment {
+    background-color: #731702;
+    border: 1px solid #731702;
+}
+
+#closePopupComment:hover {
+    background-color: #F4DFCA;
+    color: #731702;
+}
+
+#changeContentComment {
+    background-color: #095228;
+    border: 1px solid #095228;
+}
+
+#changeContentComment:hover {
+    background-color: #F4DFCA;
+    color: #095228;
+}
+
+/* Etoiles premier pop-up */
+.ratingComment label {
+    color: grey;
+    font-size: 2em;
+    transition: color .4s;
+    float: right;
+    background-color: transparent;
+    border: transparent;
+}
+
+.ratingComment input:checked ~ label, .ratingComment label:hover, .ratingComment input:checked ~ label, .ratingComment label:hover ~ label {
+    color: #731702;
+    cursor: pointer;
+}
+
+/* Deuxième pop-up */
+.popupContentComment2, .popupContentVisitor {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    background: #F4DFCA;
+    border-radius: 5px;
+    width: 20%;
+    padding: 2%;
+}
+
+.popupContentComment2 p, .popupContentVisitor p  {
+    font-size: 120%;
+    margin-bottom: 8%;
+}
+
+.popupContentVisitor p {
+    font-size: 100%;
+}
+
+.popupContentComment2 button {
+    border: solid 1px #731702;
+    color: #F4DFCA;
+    background-color: #731702;
+    width: 25%;
+    align-self: center;
+}
+
+.closePopupVisitor{
+    width: 25%;
+    align-self: center;
+    background-color: #731702;
+    border: 1px solid #731702;
+}
+
+.closePopupVisitor:hover{
+    background-color: #F4DFCA;
+    color: #731702;
+}
+
+.connectionPopupVisitor{
+    width: 25%;
+    align-self: center;
+    background-color: #095228;
+    border: 1px solid #095228;
+}
+
+.connectionPopupVisitor:hover{
+    background-color: #F4DFCA;
+    color: #095228;
+}
+
+.popupContentVisitor button {
+    width: 40%;
+}
+
+.popupContentVisitor {
+    display: flex;
+}
+
+.popupContentVisitor span {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popupContentVisitor span form {
+    width: 40%;
+    margin: 0;
+}
+
+.popupContentVisitor span form button {
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    color: #731702;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Cacher la case par défaut */
+form.filtres input[type="checkbox"] {
+    accent-color: #731702;
+}

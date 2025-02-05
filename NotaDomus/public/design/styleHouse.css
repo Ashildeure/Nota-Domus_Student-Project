@@ -1,0 +1,482 @@
+/* ---------- Feuille de style des maisons ----------- */
+
+/* ----- Style général ----- */
+body {
+    background-color: #F4DFCA;
+    font-family: 'Jost', sans-serif;
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+hr {
+    color: black;
+}
+.navBar {
+    position: fixed;
+}
+.backArrow{
+    color: black;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.backArrow svg{
+    width: 65%;
+    height: 65%;
+}
+
+
+/* ----- Informations de la maison ----- */
+.favorite {
+    align-items: center;
+}
+.infoHouse {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 3%;
+    padding-top: 6%;
+    padding-bottom: 1%;
+}
+
+/* ----- Donation ----- */
+.donation {
+    border: solid 2px #731702;
+    color: #F4DFCA;
+    background-color: #731702;
+    border-radius: 3px;
+    padding: 10px;
+    width: 10%;
+    display: flex;
+    align-self: flex-end;
+    cursor: pointer;
+    font-weight: bold;
+}
+.popupContentDonate h3 {
+    margin: 0;
+}
+.popupContentDonate svg {
+    align-self: center;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+.heart {
+    display: flex;
+    align-items: center;
+}
+.title p {
+    font-size: 225%;
+}
+.title label {
+    cursor: pointer;
+}
+.title label:hover svg, .title input:checked ~ label svg {
+    fill: red;
+}
+.house-setting {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    margin-left: 2%;
+    position: relative;
+    cursor: pointer;
+}
+.popup-house-setting {
+    background-color: white;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+    padding: 7px;
+    border-radius: 5px;
+    top: 15.5%;
+    right: 4%;
+    border: 1px grey solid;
+}
+.recom, .modify {
+    background-color: transparent;
+    border: none;
+    text-align: start;
+    cursor: pointer;
+
+}
+.recom:hover, .modify:hover {
+    color: #731702;
+
+}
+.modify {
+    padding-bottom: 4px;
+    display: flex;
+    border-bottom: 1px solid grey;
+}
+.content {
+    width: 100%;
+    height: 100%;
+}
+.content img {
+    float: left;
+    margin: 1%;
+    border-radius: 15px;
+}
+.content p {
+    text-align: justify;
+    font-size: 120%;
+    margin: 10px;
+}
+.links p {
+    margin-bottom: 10px;
+}
+.links span {
+    display: flex;
+    gap: 40px;
+}
+.links a {
+    content: attr(data-social);
+    padding: 20px;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    background-color: #731702;
+    border-radius: 70px;
+}
+
+.links a:hover{
+    background-color: #ffffff;
+    fill: var(--accent-color) ;
+}
+
+.links a:hover svg{
+    fill: var(--accent-color) ;
+}
+
+
+/* Etoiles */
+.rating label {
+    color: lightgray;
+    font-size: 2em;
+    transition: color .4s;
+    float: right;
+    background-color: transparent;
+    border: transparent;
+}
+.rating input:checked ~ label, .rating label:hover ~ label {
+    color: gold;
+    cursor: pointer;
+}
+
+/* ----- Formulaire ----- */
+.postComment {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    padding: 2%;
+    border: solid 2px #731702;
+    color: #F4DFCA;
+    background-color: #731702;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px gray;
+}
+.postComment span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.postComment input {
+    width: 10%;
+    color: #F4DFCA;
+    background-color: #590902;
+    border: #590902;
+    border-radius: 2px;
+    padding: 1%;
+    box-shadow: 2px 2px 5px black;
+    cursor: pointer;
+}
+textarea {
+    background-color: white;
+    border: transparent;
+    resize: none;
+}
+.postComment h3 {
+    margin-top: 0;
+}
+.verifContentComment {
+    color: white;
+    font-size: 12px;
+    opacity: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* ----- Commentaires ----- */
+h2 {
+    margin-left: 2%;
+}
+.comments {
+    display: flex;
+    gap: 1%;
+    padding: 1%;
+}
+.comments article {
+    flex-basis: 50%;
+}
+.comment, .MyComment{
+    position: relative;
+    color: #F4DFCA;
+    background-color: #731702;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px gray;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px #731702;
+    padding: 2%;
+    margin: 2%;
+}
+.comment[isUser=true], .MyComment[isUser=true] {
+    background-color: #590902;
+}
+.comment span:first-of-type, .MyComment span:first-of-type{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.comment label, .MyComment label {
+    cursor: pointer;
+}
+.comment span .btnUp:checked ~ .labelUp svg, .comment span .labelUp:hover svg, .MyComment span .btnUp:checked ~ .labelUp svg, .MyComment span .labelUp:hover svg {
+    fill: lightskyblue;
+}
+.comment span .btnDown:checked ~ .labelDown svg, .comment span .labelDown:hover svg, .MyComment span .btnDown:checked ~ .labelDown svg, .MyComment span .labelDown:hover svg{
+    fill: lightcoral;
+}
+.comment p, .MyComment p{
+    display: inline;
+}
+.MyComment  {
+    background-color: #590902;
+    border: solid 2px #590902;
+}
+.comment-setting, .commentFriend-setting {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.myComment-setting {
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+    padding: 7px;
+    border-radius: 5px;
+    top: 140%;
+    right: 53.5%;
+    border: 1px grey solid;
+}
+.myComment-delete, .myComment-modify {
+    background-color: transparent;
+    border: none;
+    text-align: start;
+    cursor: pointer;
+}
+.myComment-delete:hover, .myComment-modify:hover {
+    color: #731702;
+}
+.myComment-delete {
+    padding-bottom: 4px;
+    display: flex;
+    border-bottom: 1px solid grey;
+}
+.otherComment-setting, .friendComment-setting, .myComment-setting{
+    background-color: white;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+    padding: 7px;
+    border-radius: 5px;
+    top: 21%;
+    right: 4%;
+    border: 1px grey solid;
+}
+.otherComment-signal, .otherComment-addFriend, .friendComment-signal {
+    background-color: transparent;
+    border: none;
+    text-align: start;
+    cursor: pointer;
+}
+.otherComment-addFriend {
+    border-top: 1px solid grey;
+}
+.otherComment-signal, .friendComment-signal {
+    padding-bottom: 4px;
+}
+.otherComment-signal:hover, .otherComment-addFriend:hover, .friendComment-signal:hover {
+    color: #731702;
+
+}
+
+/* ---------- Popup Général ---------- */
+/* ----- Popup ----- */
+.popupComment, .popup-signalMod-com, .popup-thx-signalMod-com, .popup-info-addFriend-com, .popup-delete-myCom, .popup-deleteDone-myCom, .popup-modify-myCom, 
+.popup-modifyDone-myCom, .popupVisitor, .popupDonate {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+/* ----- Content ----- */
+.popup-content-thx-signalMod-com, .popup-content-info-addFriend-com, .popupContentComment, .popup-content-delete-myCom, .popup-content-deleteDone-myCom, 
+.popup-content-modify-myCom, .popup-content-modifyDone-myCom, .popupContentVisitor, .popupContentDonate {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: #F4DFCA;
+    border-radius: 5px;
+    width: 25%;
+    padding: 2%;
+    gap: 20px;
+}
+
+/* ----- Boutons ----- */
+.closePopup-signalMod-com, .popupContentComment button, .popup-content-thx-signalMod-com button, .popup-content-info-addFriend-com button, 
+.closePopup-cancel-myCom, .popup-content-deleteDone-myCom button, .closePopup-cancelModify-myCom, .popup-content-modifyDone-myCom button,
+.closePopupVisitor, .popupDonate button {
+    font-size: 100%;
+    align-self: center;
+    width: 25%;
+    padding: 10px;
+    border-radius: 5px;
+    border: #731702 1px solid;
+    color: #F4DFCA;
+    background-color: #731702;
+    cursor: pointer;
+}
+.changeContent-signalMod-com, .closePopup-delete-myCom, .closePopup-updateModify-myCom, .connectionPopupVisitor {
+    font-size: 100%;
+    align-self: center;
+    width: 25%;
+    padding: 10px;
+    border-radius: 7px;
+    border: #095228 1px solid;
+    color: #F4DFCA;
+    background-color: #095228;
+    cursor: pointer;
+}
+.closePopup-signalMod-com:hover, .popupContentComment button:hover, .popup-content-thx-signalMod-com button:hover, .popup-content-info-addFriend-com button:hover, 
+.closePopup-cancel-myCom:hover, .popup-content-deleteDone-myCom button:hover, .closePopup-cancelModify-myCom:hover, .popup-content-modifyDone-myCom button:hover,
+.closePopupVisitor:hover, .popupDonate button:hover {
+    color: #731702;
+    background-color: #F4DFCA;
+}
+.changeContent-signalMod-com:hover, .closePopup-delete-myCom:hover, .closePopup-updateModify-myCom:hover, .connectionPopupVisitor:hover {
+    color: #095228;
+    background-color: #F4DFCA;
+}
+
+/* ----- Commentaire ----- */
+.popupContentComment p {
+    font-size: 120%;
+}
+
+/* ----- Signaler ----- */
+.popup-signalMod-com h2 {
+    margin-top: 0px;
+}
+.popup-content-signalMod-com {
+    background: #F4DFCA;
+    padding: 40px;
+    border-radius: 5px;
+    text-align: center;
+    width: 350px;
+    padding-bottom: 20px;
+}
+.popup-content-signalMod-com div {
+    display: flex;
+    justify-content: space-around;
+}
+.popup-content-signalMod-com form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.popup-content-signalMod-com label {
+    text-align: left;
+}
+#nav_report {
+    display: flex;
+    padding-top: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* ----- Supprimer ----- */
+.popup-content-delete-myCom div {
+    display: flex;
+    justify-content: space-around;
+    gap: 20%;
+}
+
+/* ----- Modification de commentaire ----- */
+.popup-verifContentComment {
+    margin: 0px;
+    color: #731702;
+    font-size: 12px;
+    margin-bottom: 2%;
+    display: none;
+}
+.popup-content-modify-myCom {
+    text-align: inherit;
+}
+.popup-content-modify-myCom p {
+    align-content: center;
+}
+.popup-content-modify-myCom span {
+    display: flex;
+    gap: 5%;
+}
+.popup-content-modify-myCom textarea {
+    height: 100%;
+}
+.button_row {
+    display: flex;
+    justify-content: space-between;
+}
+.popup-content-modify-myCom .rating input:checked ~ label, .popup-content-modify-myCom .rating label:hover ~ label {
+    color: #731702;
+    cursor: pointer;
+}
+
+/* ----- Visiteur ----- */
+.popupContentVisitor p  {
+    font-size: 100%;
+    margin-bottom: 8%;
+}
+.popupContentVisitor span {
+    display: flex;
+    justify-content: space-around;
+}
+.popupContentVisitor span form {
+    width: 25%;
+    margin: 0;
+}
+.popupContentVisitor span form button {
+    width: 100%;
+    height: 100%;
+}

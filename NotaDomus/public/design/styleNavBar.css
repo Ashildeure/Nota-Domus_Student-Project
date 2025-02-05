@@ -1,0 +1,196 @@
+/* ---------- Feuille de style de la barre de navigation ----------- */
+
+/* ----- Style général ----- */
+.navBar {
+    width: 100%;
+    background-color: #F4DFCA;
+    border-bottom: 1px solid black;
+    z-index: 2;
+}
+
+.navBar .btnLoupe {
+    background: transparent;
+    border: none;
+}
+
+.navBar .loupe {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.navBar .logo img {
+    width: 70px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navBar .search {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar .search button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.navBar .champ {
+    padding: 5px;
+    width: 500px;
+    font-size: 14px;
+}
+
+.navBar .cloche {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+    width: 42px; /* Taille de l'icône */
+    height: auto;
+}
+
+.navBar .cloche img {
+    width: 100%;
+    height: 100%;
+}
+
+.navBar ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0%;
+    padding: 0%;
+    height: 80px;
+    list-style-type: none;
+}
+
+.maMaison {
+    background-color: #731702;
+    color: #F4DFCA;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 6px 10px 6px;
+}
+
+.inputHouse {
+    display: none;
+}
+
+.nav #house-Suggestion{
+    background-color: white;
+    border: 1px solid #7a7878;
+    border-radius: 3px;
+    height: 170px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
+}
+.nav .name-House-Suggestion{
+    font-size: 90%;
+    font-weight: normal;
+    width: 100%;
+    display: inline;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+/* ----- Pop-up des notifications ----- */
+.popupNotif {
+    margin: 0;
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: right;
+    margin-top: 81px;
+    z-index: 10;
+}
+
+.popupNotif .popup-content {
+    font-family: 'Jost', sans-serif;
+    padding: 0.5%;
+    margin: 0;
+    width: 22.5%;
+    height: 30%;
+    overflow-y: auto;
+    color: #731702;
+    background-color: #F4DFCA;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px black;
+}
+
+.popupNotif .popup-content span {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popupNotif .popup-content span:last-of-type {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.popupNotif .popup-content h2 {
+    font-size: 100%;
+    margin: 0;
+}
+
+.popupNotif .popup-content p {
+    font-size: 90%;
+    margin: 2%;
+}
+
+.popupNotif .popup-content input, .popupNotif .popup-content button {
+    border: solid 2px #731702;
+    color: #F4DFCA;
+    background-color: #731702;
+    width: fit-content;
+    align-self: center;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 2%;
+}
+
+.popupNotif .popup-content label {
+    cursor: pointer;
+}
+
+/* ----- Recherche ----- */
+#house-Suggestion {
+    position: absolute;
+    width: 512px;
+    height: 500%;
+    background-color: white;
+    top: 34px;
+    right: 0;
+    overflow: auto;
+    display: none;
+    flex-direction: column;
+    border: 1px solid darkgray;
+}
+
+#house-Suggestion > button {
+    text-align: inherit;
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+#house-Suggestion > button:hover {
+    color: #731702;
+}

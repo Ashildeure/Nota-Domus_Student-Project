@@ -1,0 +1,612 @@
+/* ---------- Feuille de style de l'interface modérateur ----------- */
+
+/* ----- Style général ----- */
+body {
+    margin: 0%;
+    font-family: 'Jost', sans-serif;
+}
+
+/* ----- Conteneur fenêtre -----  */
+.mod_main {
+    width: 25%;
+    height: 100vh;
+    position: relative;
+    left: 95%;
+    transition: .5s ease-in-out;
+}
+
+/* ----- Conteneur modération ----- */
+.frame-mod {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #F4DFCA;
+    transition: .5s ease-in-out;
+}
+
+/* ----- Profil ----- */
+.mod-profil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+    margin: 10px 0px;
+}
+
+.mod-profil div {
+    display: flex;
+    gap: 5%;
+}
+
+.mod-myProfil {
+    width: 120%;
+    display: flex;
+    align-items: center;
+}
+
+.mod-myProfil svg {
+    height: 5vh;
+    width: 20%;
+}
+
+.mod-myProfil button {
+    margin: 16px 0px 16px 0px;
+}
+
+.mod-logOut {
+    height: 6vh;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mod-logOut div {
+    height: 100%;
+    width: 100%;
+}
+
+.mod-logOut button {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+}
+
+.mod-logOut a svg {
+    width: 100%;
+    height: 100%;
+    fill: black;
+}
+
+.mod-logOut a:hover svg {
+    fill: #731702;
+}
+
+.mod-btnlogout {
+    color: #731702;
+    width: 60%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mod-modif {
+    padding: 5px 7px;
+    border-radius: 5px;
+    background-color: #731702;
+    border: 1px solid #731702;
+    cursor: pointer;
+    color: #F4DFCA;
+}
+.mod-modif{
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+.mod-modif:hover {
+    background-color: #F4DFCA;
+    color: #731702;
+}
+
+/* Bouton Amis ouverture modération */
+.mod-label {
+    background-color: #731702;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 40px 10px 40px 10px;
+    border-radius: 50px;
+    box-shadow: 10px 2px 20px #521e13;
+    position: absolute;
+    top: 40.2%;
+    left: -6%;
+    transition: .5s ease-in-out;
+    z-index: 2;
+}
+
+.mod-label svg {
+    width: 40px;
+    height: auto;
+}
+
+/* Ruban rouge arriere-plan */
+.rectangle {
+    background-color: #731702;
+    position: absolute;
+    width: 220%;
+    height: 12.5%;
+    bottom: 47.5%;
+    right: -50%;
+}
+
+/* ----- Fonctions déroulantes ----- */
+#mod_toggle:checked ~ .mod_main .frame-mod {
+    left: 0;
+}
+
+#mod_toggle:checked ~ .mod_main {
+    left: 75%;
+}
+
+#mod_toggle:checked ~ .mod_main .friends-label {
+    left: -8%;
+}
+
+#mod_toggle:checked ~ .mod_main .frame-mod .mod-form {
+    margin-left: 10%;
+}
+
+/* ----- Contenu modération ----- */
+.mod-form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 20%;
+    transition: .5s ease-in-out;
+    width: 90%;
+}
+
+.type_sign {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.type_sign button {
+    padding: 5px 7px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #731702;
+    border: 1px solid #731702;
+    cursor: pointer;
+    color: #F4DFCA;
+    width: 50%;
+    margin-right: 2%;
+    font-weight: bold;
+}
+
+.type_sign button:hover {
+    background-color: #F4DFCA;
+    color: #731702;
+}
+
+.type_sign button:hover svg {
+    fill: #731702;
+}
+
+.recent-button {
+    opacity: 0.5;
+}
+
+/* ----- Commentaires ----- */
+.frame-coms-mod {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+
+}
+
+h2 {
+    margin-left: 2%;
+}
+
+.dots-button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Etoiles */
+.tiny_com_rating_mod label {
+    color: #F4DFCA;
+    transition: color .4s;
+    background-color: transparent;
+    border: transparent;
+    cursor: default
+}
+
+.tiny_com_rating_mod input:checked ~ label {
+    color: #F4DFCA; /* Réinitialiser la couleur des étoiles après */
+}
+
+.tiny_com_rating_mod input:checked + label, .tiny_com_rating_mod input:checked + label ~ label {
+    color: #731702;
+
+}
+
+/* ----- Commentaires signalés ----- */
+.coms-signal {
+    height: 716px;
+    overflow-y: auto;
+    scrollbar-color: #ffffff;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    background-color: #731702;
+    padding: 4%;
+    padding-top: 7%;
+    border-radius: 0px;
+}
+
+.comment-signal {
+    position: relative;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px grey;
+    padding: 2%;
+    align-items: stretch;
+}
+
+.comment-signal span:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.comment-signal label {
+    cursor: pointer;
+}
+
+.signaler {
+    font-weight: bold;
+    margin: 0px;
+    font-size: 85%;
+}
+
+.text-comment {
+    display: inline;
+    font-size: 85%;
+    margin: 0px 0px 5% 0px;
+    text-align: justify;
+}
+
+.title-signCause {
+    font-weight: bold;
+    color: #731702;
+    font-size: 95%;
+    margin: 0%;
+    margin-bottom: 2%;
+}
+
+.signCause {
+    text-align: justify;
+    font-size: 85%;
+    margin: 0%;
+    margin-bottom: 2%;
+}
+
+.house-name {
+    font-size: 85%;
+    font-weight: bold;
+    margin: 0%;
+    margin-bottom: 2%;
+}
+
+.com-part1-signal {
+    display: flex;
+    align-items: end;
+}
+
+.com-part1-signal p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 110%;
+    color: #731702;
+}
+
+.ligne1_signal {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.ligne2_signal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option-signal {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 8%;
+    top: 3%;
+    border: 1px #731702 solid;
+    border-radius: 5px;
+    margin-right: 3%;
+    justify-content: space-between;
+    background-color: #F4DFCA;
+}
+
+.option-signal button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.option-signal button:hover {
+    color: #731702;
+}
+
+.remove-button, .see-button {
+    border: none;
+}
+
+.report-button {
+    border: none;
+    border-top: 1px solid #731702;
+    border-bottom: 1px solid #731702;
+}
+
+.popup-signCause {
+    color: black;
+    background-color: #eca797;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px #731702;
+    padding: 2%;
+}
+
+/* ----- Commentaires récents ----- */
+.coms-recent {
+    height: 716px;
+    overflow-y: auto;
+    scrollbar-color: #ffffff;
+    margin-right: 2%;
+    display: none;
+    flex-direction: column;
+    gap: 2%;
+    background-color: #731702;
+    padding: 4%;
+    padding-top: 7%;
+    border-radius: 0px;
+
+}
+
+.comment-recent {
+    position: relative;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px grey;
+    padding: 2%;
+
+}
+
+.comment-recent span:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.comment-recent label {
+    cursor: pointer;
+}
+
+.comment-recent p {
+    display: inline;
+    font-size: 85%;
+    margin: 0px 0px 5% 0px;
+    text-align: justify;
+}
+
+.comment-recent p:first-of-type {
+    font-weight: bold;
+}
+
+.com-part1-recent {
+    display: flex;
+    align-items: end;
+}
+
+.com-part1-recent p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 110%;
+    color: #731702;
+}
+
+.option-recent {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 8%;
+    top: 3%;
+    border: 1px #731702 solid;
+    border-radius: 5px;
+    margin-right: 3%;
+    justify-content: space-between;
+    background-color: #F4DFCA;
+}
+
+.option-recent button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.option-recent button:hover {
+    color: #731702;
+}
+
+.ligne1_recent {
+    display: flex;
+    gap: 2%;
+}
+
+/* ----- Popups ------ */
+.popup-content-removeMod p, .popup-content-thx-signalMod p {
+    font-weight: bold;
+}
+
+/* ----- Supprimer ----- */
+.popup-removeMod {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+.popup-content-removeMod {
+    width: 20%;
+    padding: 1%;
+    background-color: #F4DFCA;
+    border: 1px solid #b8a797;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.closePopup-removeMod, .closePopup-signalMod, .popup-content-thx-signalMod button {
+    padding: 5px 7px;
+    border-radius: 5px;
+    background-color: #731702;
+    border: 1px solid #731702;
+    cursor: pointer;
+    color: #F4DFCA;
+    align-self: center;
+    width: 25%;
+    font-size: 100%;
+}
+
+.closePopup-removeMod:hover {
+    background-color: #F4DFCA;
+    color: #731702;
+}
+
+/* ----- Signaler ----- */
+
+.popup-signalMod {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+.popup-signalMod h2 {
+    margin-top: 0px;
+}
+
+.popup-content-signalMod {
+    background: #F4DFCA;
+    padding: 40px;
+    border-radius: 5px;
+    text-align: center;
+    width: 350px;
+    padding-bottom: 20px;
+}
+
+.popup-content-signalMod form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popup-content-signalMod label {
+    text-align: left;
+}
+
+#nav_report {
+    display: flex;
+    padding-top: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.changeContent-signalMod {
+    padding: 5px;
+    border-radius: 7px;
+    border: #095228 1px solid;
+    color: #F4DFCA;
+    background-color: #095228;
+    cursor: pointer;
+    width: 25%;
+    font-size: 100%;
+    align-self: center;
+}
+
+.closePopup-signalMod:hover, .popup-content-thx-signalMod button:hover {
+    color: #731702;
+    background-color: #F4DFCA;
+}
+
+.changeContent-signalMod:hover {
+    color: #095228;
+    background-color: #F4DFCA;
+}
+
+.popup-thx-signalMod {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+.popup-content-thx-signalMod {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: #F4DFCA;
+    border-radius: 5px;
+    width: 25%;
+    padding: 2%;
+}
+
+
+
