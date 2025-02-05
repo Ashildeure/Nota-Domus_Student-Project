@@ -1,0 +1,20 @@
+# Les règles qui interdisent d'abord, puis autorise ensuite
+Order deny,allow
+
+## Par défaut aucune autorisation à rien sur ce site
+Deny from all
+
+# On lève l'interdiction sur le fichier index.php
+# Autorise aussi l’accès au site sans index.php
+<FilesMatch "^(index\.php)?$">
+    Allow from all
+</FilesMatch>
+
+# On autorise les fichiers CSS
+<Files "*.css">
+    Allow from all
+</Files>
+# On autorise les fichiers Javascript
+<Files "*.js">
+    Allow from all
+</Files>
